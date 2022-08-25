@@ -13,64 +13,16 @@ function handleResponse(response) {
     setResults(response.data);
 }
 
-
- function handleTranslate() {
-    
-const encodedParams = new URLSearchParams();
-encodedParams.append("q", "Hello, world!");
-encodedParams.append("target", "es");
-encodedParams.append("source", "en");
-
-const options = {
-  method: 'POST',
-  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
-  headers: {
-    'content-type': 'application/x-www-form-urlencoded',
-    'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': '2583a75a4dmshb34f90d0e9e5eeap173ba6jsn7a5f43d6c965',
-    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-  },
-  data: encodedParams
-};
-
-axios.get(options).then(handleResponse)
- }
  
  
- function handleLanguages() {
-
-    const options = {
-        method: 'GET',
-        url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/languages',
-        headers: {
-          'Accept-Encoding': 'application/gzip',
-          'X-RapidAPI-Key': '2583a75a4dmshb34f90d0e9e5eeap173ba6jsn7a5f43d6c965',
-          'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-        }
-      };
-      
-      axios.get(options).then(handleTranslate)
-  }
 
 
-function translate() {
-    const encodedParams = new URLSearchParams();
-    encodedParams.append("q", `${text}`);
+//function translate() {
+  // let apiUrl = `https://translation.googleapis.com/language/translate/v2`
 
-const options = {
-  method: 'POST',
-  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect',
-  headers: {
-    'content-type': 'application/x-www-form-urlencoded',
-    'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': '2583a75a4dmshb34f90d0e9e5eeap173ba6jsn7a5f43d6c965',
-    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-  },
-  data: encodedParams
-};
-axios.get(options).then(handleLanguages)
+//axios.get().then(handleResponse)
 
-}
+//}
 
 
  function handleSubmit(event) {
